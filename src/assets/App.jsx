@@ -6,6 +6,7 @@ function App() {
       <div id="citation"></div>
       <div id="blague"></div>
       <button id="monbouton">Réveler la chute</button>
+      <div id="mocktail"></div>
       <Api />
     </main>
   );

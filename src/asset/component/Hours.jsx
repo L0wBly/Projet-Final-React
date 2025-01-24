@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import "./style.css";
-
+import "../../asset/style.css"
 function Hours() {
     const [time, setTime] = useState(new Date());
   

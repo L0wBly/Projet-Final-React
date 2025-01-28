@@ -1,13 +1,11 @@
 import { useEffect, useState } from 'react'
+import aleatoire2 from '../utils/random'
 
 export default function Cocktail() {
 
     const [cocktail, setCocktail] = useState(null)
     const [loading, setLoading] = useState(true)
     const [error, setError] = useState(null)
-    const aleatoire2 = (min, max) => {
-        return Math.random() * (max - min) + min
-      }
     const aleatoire = aleatoire2(1, 57)
 
     async function fetchCocktail() {
@@ -40,8 +38,12 @@ export default function Cocktail() {
         {error && <p>{error.message}</p>}
         {cocktail && (
             <div>
-                <h2>Mocktail du jour</h2>
-                <p>{cocktail.drinks[parseInt(aleatoire)].strDrink}</p>
+                <h2>
+                    Mocktail du jour
+                </h2>
+                <p>
+                    {cocktail.drinks[parseInt(aleatoire)].strDrink}
+                </p>
                 <img src={`${cocktail.drinks[parseInt(aleatoire)].strDrinkThumb}`} alt="photo du mocktail" />
             </div>
         )}

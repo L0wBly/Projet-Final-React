@@ -36,8 +36,12 @@ export default function Citation() {
         {error && <p>{error.message}</p>}
         {citation && (
             <div>
-                <h2>Citation du jour</h2>
-                <p>{citation.slip.advice}</p>
+                <h2>
+                    Citation du jour
+                </h2>
+                <p>
+                    {citation.slip.advice}
+                </p>
             </div>
         )}
     </div>

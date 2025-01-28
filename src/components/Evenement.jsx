@@ -1,14 +1,12 @@
 import { useEffect, useState } from 'react'
+import aleatoire2 from '../utils/random'
 
 export default function Evenement() {
 
     const [evenement, setEvenement] = useState(null)
     const [loading, setLoading] = useState(true)
     const [error, setError] = useState(null)
-    const aleatoire2 = (min, max) => {
-        return Math.random() * (max - min) + min
-      }
-      const aleatoire = aleatoire2(1, 57)
+    const aleatoire = aleatoire2(1, 57)
 
     async function fetchEvenement() {
         setLoading(true)
@@ -40,9 +38,13 @@ export default function Evenement() {
         {error && <p>{error.message}</p>}
         {evenement && (
             <div>
-                <h2>Évenement historique du jour</h2>
+                <h2>
+                    Évenement historique du jour
+                </h2>
                 <p>{`${evenement.date} ${evenement.data.Events[parseInt(aleatoire)].year}`}</p>
-                <p>{evenement.data.Events[parseInt(aleatoire)].text}</p>
+                <p>
+                    {evenement.data.Events[parseInt(aleatoire)].text}
+                </p>
             </div>
         )}
     </div>

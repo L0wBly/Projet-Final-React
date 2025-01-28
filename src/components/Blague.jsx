@@ -5,9 +5,7 @@ export default function Blague() {
     const [blague, setBlague] = useState(null)
     const [loading, setLoading] = useState(true)
     const [error, setError] = useState(null)
-    const chute = document.querySelector('#chute');
-    if (document.querySelector('#monbouton').addEventListener('click', function() {
-        chute.classList.remove("hide")}));
+    const [hide, setHide] = useState(false)
 
     async function fetchBlague() {
         setLoading(true)
@@ -32,6 +30,9 @@ export default function Blague() {
     useEffect(() => {
         fetchBlague()
     }, [])
+    function reveal() {
+        setHide(true)
+    }
 
   return (
     <div>
@@ -39,10 +40,22 @@ export default function Blague() {
         {error && <p>{error.message}</p>}
         {blague && (
             <div>
-                <h2>Blague du jour</h2>
-                <p>{blague.setup}</p>
-                <button id="monbouton">Réveler la chute</button>
-                <p id='chute' className='hide'></p>
+                <h2>
+                    Blague du jour
+                </h2>
+                <p>
+                    {blague.setup}
+                </p>
+                {hide && 
+                    <p>
+                        {blague.punchline}
+                    </p>
+                }
+                {!hide &&
+                <button onClick={() => (reveal())}>
+                    Réveler la chute
+                </button>
+                }
             </div>
         )}
     </div>

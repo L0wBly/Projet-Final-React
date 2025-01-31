@@ -11,7 +11,7 @@ function Dialog() {
     // -- Render
     return (
       <div className="w-full">
-        <button onClick={gererAffichage} className="border-2 border-solid pr-4 pl-4 pt-1 pb-1 rounded-[20px] hover:bg-blue-500" >Afficher dialog</button>
+        <button onClick={gererAffichage} className="border-2 border-solid border-black-500 pr-4 pl-4 pt-1 pb-1 rounded-[20px] hover:bg-blue-500">Afficher dialog</button>
   
         <dialog id="dialog" open={dialogOuverte} className="w-full" >
           <header className="w-1/6">

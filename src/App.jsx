@@ -2,6 +2,8 @@ import Citation from "./components/Citation";
 import Blague from "./components/Blague";
 import Cocktail from "./components/Cocktail";
 import Evenement from "./components/Evenement";
+import Hours from "./components/Hours";
+import Dialog from "./components/Dialog";
 import './assets/style.css';
 function App() {
   return (
@@ -11,7 +13,12 @@ function App() {
       <Blague />
       <Cocktail />
       <Evenement />
+      <div id='heure'>
+        <Hours />
+        <Dialog />
+      </div>
     </main>
   );
 }
+
 export default App;

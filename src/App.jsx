@@ -1,5 +1,5 @@
-import Hours from "./component/Hours";
-import Dialog from "./component/Dialog";
+import Hours from "./components/Hours";
+import Dialog from "./components/Dialog";
 
 function App() {
   return (

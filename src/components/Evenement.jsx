@@ -21,7 +21,6 @@ export default function Evenement() {
             setEvenement(data)
         } catch (error) {
             setError(error)
-            setLoading(false)
             return
         } finally {
             setLoading(false)

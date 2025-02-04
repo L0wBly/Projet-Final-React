@@ -21,7 +21,6 @@ export default function Cocktail() {
             setCocktail(data)
         } catch (error) {
             setError(error)
-            setLoading(false)
             return
         } finally {
             setLoading(false)

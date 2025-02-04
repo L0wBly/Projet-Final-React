@@ -10,7 +10,7 @@ import ClickSpark from '../utils/Animations/ClickSpark/ClickSpark';
 export default function Home() {
   const navigate = useNavigate();
   function goto() {
-    navigate('/Markdown');
+    navigate('/markdown');
   }
 
 
@@ -25,9 +25,9 @@ export default function Home() {
         <Evenement />
         <div id='heure'>
           <Hours />
-          <Dialog />
         </div>
     </div>
+      <Dialog />
       <button onClick={() => goto()}>Aller au Markdown</button>
     </main>
   )

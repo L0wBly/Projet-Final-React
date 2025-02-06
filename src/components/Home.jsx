@@ -16,7 +16,7 @@ export default function Home() {
 
   return (
     <main className="bg-red-500">
-    <Loader />
+    <Loader timer={4000} />
     <div>
       <ClickSpark />
         <h1 className="box-border size-32 border-4 p-">Projet final</h1>

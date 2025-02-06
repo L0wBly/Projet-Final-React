@@ -1,14 +1,15 @@
 import { useEffect, useState } from 'react';
 import BarLoader from "react-spinners/BarLoader";
+import PropTypes from 'prop-types';
 
-export default function Loader() {
+export default function Loader({timer}) {
     const [loading, setLoading] = useState(false);
 
     useEffect(() => {
         setLoading(true)
         setTimeout(() => {
           setLoading(false)
-        }, 4000);
+        }, timer);
       }, [])
 
     return (
@@ -26,3 +27,6 @@ export default function Loader() {
         </div>
     )
 };
+Loader.propTypes = {
+    timer: PropTypes.string.isRequired,
+  };

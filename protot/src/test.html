@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Box Example</title>
+</head>
+<body>
+
+  <div class="box">
+    <div class="box-inner">
+      <h1>Lorem Ipsum</h1>
+      <p>Lorem ipsum dolor sit ame consectetur adipisicing elit. Illum laudantium odit, eligendi architecto eveniet labore error minus, temporibus doloremque, amet itaque. Voluptatum rerum dolorem nesciunt totam. Saepe reprehenderit dignissimos error!</p>
+    </div>
+  </div>
+  <style>
+    /* Import de la police */
+
+/* Variables CSS */
+:root {
+  --color-alpha: #b78846;
+}
+
+/* Reset de base */
+
+
+.box {
+  background: radial-gradient(#003, #000);
+  overflow: hidden;
+  color: #fff;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 18px;
+}
+
+
+
+/* Boîte principale */
+.box {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate3d(-50%, -50%, 0);
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 100%;
+  max-width: 600px;
+  padding: 5px;
+  border: 2px solid var(--color-alpha);
+}
+
+.box::before, .box::after {
+  content: "•";
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  font-size: 14px;
+  color: var(--color-alpha);
+  border: 2px solid var(--color-alpha);
+  line-height: 12px;
+  top: 5px;
+  text-align: center;
+}
+
+.box::before {
+  left: 5px;
+}
+
+.box::after {
+  right: 5px;
+}
+
+/* Boîte interne */
+.box-inner {
+  position: relative;
+  border: 2px solid var(--color-alpha);
+  padding: 40px;
+}
+
+.box-inner::before, .box-inner::after {
+  content: "•";
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  font-size: 14px;
+  color: var(--color-alpha);
+  border: 2px solid var(--color-alpha);
+  line-height: 12px;
+  bottom: -2px;
+  text-align: center;
+}
+
+.box-inner::before {
+  left: -2px;
+}
+
+.box-inner::after {
+  right: -2px;
+}
+
+  </style>
+</body>
+</html>

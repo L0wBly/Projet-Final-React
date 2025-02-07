@@ -19,7 +19,6 @@ export default function Citation() {
             setCitation(data)
         } catch (error) {
             setError(error)
-            setLoading(false)
             return
         } finally {
             setLoading(false)

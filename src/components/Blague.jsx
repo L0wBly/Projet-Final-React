@@ -20,7 +20,6 @@ export default function Blague() {
             setBlague(data)
         } catch (error) {
             setError(error)
-            setLoading(false)
             return
         } finally {
             setLoading(false)

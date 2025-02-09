@@ -34,7 +34,6 @@ function Dialog() {
       fetchCuisine()
     }, [])
   
-    // -- Render
     return (
       <div>
         {loading && <p>Loading...</p>}

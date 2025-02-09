@@ -15,7 +15,7 @@ export default function Home() {
   }
 
   return (
-    <main className="bg-red-500">
+    <main className="bg-red-500 h-[150vh]">
     <Loader timer={4000} />
     <div>
       <ClickSpark />

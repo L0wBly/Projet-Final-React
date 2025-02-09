@@ -1,5 +1,4 @@
 import { createElement, useState, useEffect } from "react";
-import aleatoire2 from '../utils/random'
 
 function Dialog() { 
   

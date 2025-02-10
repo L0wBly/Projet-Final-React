@@ -1,6 +1,8 @@
-import React, { useState, useEffect } from 'react';
-function Hours() {
+import { useState, useEffect } from 'react';
+import PropTypes from 'prop-types';
+function Hours({timerhours}) {
     const [time, setTime] = useState(new Date());
+    const [hours, setHours] = useState(false);
   
     useEffect(() => {
       const timer = setInterval(() => {
@@ -19,14 +21,32 @@ function Hours() {
 
       let date1 = new Date().toLocaleDateString();
 
+      useEffect(() => {
+        const timer1 = setTimeout(() => {
+          setHours(true);
+        }, timerhours);
+        
+        return () => {
+          clearTimeout(timer1);
+        };
+      }, []);
   
     return (
-        <div className='heure'>
-          <h1>La date du jour</h1>
-          <p id='p1'>{date1}</p>
-          <p>{formattedTime}</p>
-        </div>
+      <div>
+        {hours && 
+          <div className='pr-1 flex flex-col items-center'>
+            <p id='p1'>{date1}</p>
+            <p>{formattedTime}</p>
+          </div>
+        }
+      </div>    
+      
     );
   }
+
+Hours.propTypes = {
+    timer: PropTypes.string.isRequired,
+  };
   
-  export default Hours;
+export default Hours;
+

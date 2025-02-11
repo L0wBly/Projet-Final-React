@@ -76,7 +76,8 @@ export default function Home() {
                   style={{ transform: `rotate(${rotateDeg})` }}
                   onClick={handleClick}>
             <p className="text-white mt-4 text-sm overflow-hidden text-ellipsis"> 
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatem veniam molestiae accusamus illo. Voluptatem et debitis sapiente iusto neque, delectus facilis temporibus consequatur nisi saepe optio, natus dignissimos aut atque enim laudantium nam itaque ea excepturi harum provident ducimus? Architecto dicta saepe eum sint voluptates quasi vitae repellat porro, consequuntur dignissimos repellendus. A eaque enim fuga minus distinctio tempore deserunt error illo blanditiis quo numquam, excepturi impedit nesciunt similique nulla hic itaque maiores nisi ab libero labore cum officia? Dignissimos culpa quidem odit illo blanditiis, veniam eius optio necessitatibus assumenda. Iusto ab minima quam voluptas debitis, corrupti facere eius blanditiis!</p>
+              <Blague />
+            </p>
           </div>
         </div>
       </div>
@@ -118,6 +119,17 @@ export default function Home() {
 
   <div className="absolute top-[1400px]">
   <Cocktail />
+  </div>
+
+  <div className="absolute top-[1400px] w-[900px] h-[500px] right-[100px] bg-amber-400">
+    <img className="s" src="../assets/images/saturn.jpg" alt="Sega Saturn" />
+    <p className="leading-[2]"> 
+    500 $
+    <br />
+    Entièrement presque neuve
+    <br />
+    Pour 20$ de + : VIRTUA FIGHTER 2 !
+    </p>
   </div>
 
 

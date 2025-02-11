@@ -40,8 +40,9 @@ export default function Blague() {
         {blague && (
             <div>
                 <h2>
-                    Blague du jour
+                    Blague du jour :
                 </h2>
+                <br />
                 <p>
                     {blague.setup}
                 </p>

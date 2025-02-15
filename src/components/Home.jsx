@@ -26,6 +26,22 @@ export default function Home() {
     setRotateDeg((prevRotateDeg) => prevRotateDeg === "-200deg" ? "-2deg" : "-200deg");
   };
 
+  const [showMocktail, setShowMocktail] = useState(false);
+  const [showGif, setShowGif] = useState(false);
+
+
+  const MocktailClick = () => {
+
+    setShowGif(true);
+    setShowMocktail(false);
+
+    setTimeout(() => {
+      setShowGif(false);
+      setShowMocktail(true);
+      
+    }, 3000);
+  };
+
 
 
 
@@ -54,7 +70,7 @@ export default function Home() {
       </div>
 
 
-      {/* Fichiers Markdawn */}
+      {/* Fichiers Markdown */}
 
       <div className="w-[600px] h-[600px] bg-[rgba(0,0,0,0.7)] absolute top-[-20px] left-[20px] z-[1000] flex justify-center items-center rounded-[50px] mt-[65px]">
       <div className="w-[500px] h-[500px] bg-[#d8b801] flex justify-center items-center relative">
@@ -66,7 +82,7 @@ export default function Home() {
       </div>
       </div>
 
-      {/* Rainbow */}
+      {/* BLAGUE */}
 
       <div className="relative">
       <div className="w-[800px] h-[550px] bg-black border-t-[10px] border-r-[170px] border-b-[10px] border-l-[20px] border-gray-900 flex justify-center items-center absolute right-[1400px] top-[725px] left-[5px] animate-[rainbow-border_5s_infinite] rounded-xl">
@@ -93,8 +109,8 @@ export default function Home() {
       {/* Citation */}
 
       
-  <div className="absolute top-[900px] right-[-100px] transform translate-x-[-50%] translate-y-[-50%] bg-blue-800 max-w-[600px] w-full p-2 border-2 border-[#d3800c]">
-    <div className="relative border-2 border-[#d3800c] p-10 flex items-center justify-between">
+  <div className="absolute top-[900px] right-[-100px] transform translate-x-[-50%] translate-y-[-50%] bg-indigo-600 max-w-[600px] w-full p-2 border-2 border-[#db0f31]">
+    <div className="relative border-2 border-[#db0f31] p-10 flex items-center justify-between">
     
     
       <p className="text-[20px] text-center font-medium text-white max-w-[calc(100%-160px)] overflow-hidden text-ellipsis">
@@ -102,8 +118,70 @@ export default function Home() {
       </p>
 
     
-      <div className="flex justify-center items-center w-[150px] h-[150px] bg-[#d8b801]">
+      <div className="flex justify-center items-center w-[150px] h-[150px] bg-[#db0f31]">
       <img className="w-full h-full object-cover" src="../assets/images/Speecher.jpg" alt="Orateur" />
+      </div>
+
+    </div>
+
+  
+    <div className="absolute left-0 top-0 bottom-0 flex items-center justify-start w-4 h-4 text-center text-[#db0f31] border-2 border-[#db0f31]">•</div>
+    <div className="absolute right-0 top-0 bottom-0 flex items-center justify-end w-4 h-4 text-center text-[#db0f31] border-2 border-[#db0f31]">•</div>
+
+  
+    <div className="absolute left-5 top-5 text-[#db0f31] text-[14px] border-2 border-[#db0f31] rounded-full w-[14px] h-[14px] flex items-center justify-center">•</div>
+    <div className="absolute right-5 top-5 text-[#db0f31] text-[14px] border-2 border-[#db0f31] rounded-full w-[14px] h-[14px] flex items-center justify-center">•</div>
+  </div>
+
+
+{/* Cocktail */}
+
+<div className="absolute left-[30px] top-[1350px] bg-[#d8b801] w-[900px] h-[700px] flex justify-center items-center">
+  <div className="relative w-[100%] h-[100%] flex justify-center items-center">
+    {!showGif && !showMocktail && (
+      <img
+        className="" 
+        src="../assets/images/mocktail.jpg"
+        alt="Mocktail Vide"
+        onClick={MocktailClick}
+      />
+    )}
+    {showGif && (
+      <div className="absolute">
+        <img
+          className=""
+          src="../assets/images/shake.gif"
+          alt="Shake"
+        />
+      </div>
+    )}
+    {showMocktail && (
+      <div className="absolute flex justify-center items-center">
+      <p className="text-center text-[24px] font-bold max-w-[80%] overflow-hidden text-ellipsis whitespace-nowrap">
+        <Cocktail />
+        </p>
+      </div>
+    )}
+  </div>
+</div>
+
+  
+  <img className="absolute left-[850px] top-[800px]" src="../assets/images/canette.gif" alt="Canette"/>
+      
+
+  {/* Evenement */}
+
+  <div className="absolute top-[1200px] right-[-100px] transform translate-x-[-50%] translate-y-[-50%] bg-orange-950 max-w-[600px] w-full p-2 border-2 border-[#d3800c]">
+    <div className="relative border-2 border-[#d3800c] p-10 flex items-center justify-between">
+    
+    
+      <p className="text-[20px] text-center font-medium text-white max-w-[calc(100%-160px)] overflow-hidden text-ellipsis">
+      "<Evenement />"
+      </p>
+
+    
+      <div className="flex justify-center items-center w-[150px] h-[190px] bg-[#d8b801]">
+      <img className="w-full h-full object-cover" src="../assets/images/trumpet.png" alt="Trumpet" />
       </div>
 
     </div>
@@ -113,26 +191,31 @@ export default function Home() {
     <div className="absolute right-0 top-0 bottom-0 flex items-center justify-end w-4 h-4 text-center text-[#d3800c] border-2 border-[#d3800c]">•</div>
 
   
-    <div className="absolute left-5 top-5 text-[#d3800c] text-[14px] border-2 border-[#d3800c] rounded-full w-[14px] h-[14px] flex items-center justify-center">•</div>
-    <div className="absolute right-5 top-5 text-[#d3800c] text-[14px] border-2 border-[#d3800c] rounded-full w-[14px] h-[14px] flex items-center justify-center">•</div>
+    <div className="absolute left-5 top-65 text-[#d3800c] text-[14px] border-2 border-[#d3800c] rounded-full w-[14px] h-[14px] flex items-center justify-center">•</div>
+    <div className="absolute right-5 top-65 text-[#d3800c] text-[14px] border-2 border-[#d3800c] rounded-full w-[14px] h-[14px] flex items-center justify-center">•</div>
   </div>
 
-  <div className="absolute top-[1400px]">
-  <Cocktail />
-  </div>
 
-  <div className="absolute top-[1400px] w-[900px] h-[500px] right-[100px] bg-amber-400">
+   {/* SEGA */}
+
+    <div className="absolute top-[1400px] w-[900px] h-[500px] right-[50px] bg-[#834242ad]">
     <img className="s" src="../assets/images/saturn.jpg" alt="Sega Saturn" />
-    <p className="leading-[2]"> 
-    500 $
+    <img className="absolute w-[400px] h-[460px] right-[0px] top-[0px]" src="../assets/images/virtua.jpg" alt="Virtua Fighter Jacket" />
+    <p className="font-[fontSell] leading-[5] text-neutral-50"> 
+    239 €
     <br />
-    Entièrement presque neuve
+    Entièrement presque parfaitement neuve
     <br />
-    Pour 20$ de + : VIRTUA FIGHTER 2 !
+    Pour 20 € de + : VIRTUA FIGHTER 2 !
     </p>
   </div>
 
 
+    {/* RECETTE */}
+
+    <div className="absolute top-[2300px]">
+      <Dialog />
+    </div>
 
 
     </div>

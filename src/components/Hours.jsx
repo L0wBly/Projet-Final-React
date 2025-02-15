@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import '../style.css';
 function Hours() {
     const [time, setTime] = useState(new Date());
   
@@ -22,9 +23,10 @@ function Hours() {
   
     return (
         <div className='heure'>
-          <h1>La date du jour</h1>
-          <p id='p1'>{date1}</p>
-          <p>{formattedTime}</p>
+          <p className=''>Il est actuellement : </p>
+          <br />
+          <p className='size-[30px] animate-[rainbow_5s_infinite]'>{date1} {formattedTime}</p>
+          
         </div>
     );
   }

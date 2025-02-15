@@ -57,14 +57,12 @@ export default function Home() {
       {/* Accueil : LOGO + ?? */}
 
       <div className="w-[1200px] h-[600px] bg-cyan-500 rounded-lg absolute top-0 right-0 flex justify-center items-center">
-        <div className="w-[1190px] h-[590px] bg-amber-700 flex justify-center items-center relative">
+        <div className="w-[1190px] h-[590px] bg-amber-200 flex justify-center items-center relative">
           <img className="top-[20px] absolute" src="../assets/images/ani_line_star2_rainbow.gif" alt="banderol" />
           <img className="absolute top-[50px] w-[585px]" src="../assets/images/LOGO.png" />
-          <p className="text-white mt-[30px]" >
-            <Blague />
-            <Hours />
-            <Evenement />
-            <Dialog />
+          <p className="">
+            Bienvenue au Markdawn Palace !
+           <Hours />
           </p>
         </div>
       </div>
@@ -109,7 +107,7 @@ export default function Home() {
       {/* Citation */}
 
       
-  <div className="absolute top-[900px] right-[-100px] transform translate-x-[-50%] translate-y-[-50%] bg-indigo-600 max-w-[600px] w-full p-2 border-2 border-[#db0f31]">
+  <div className="absolute top-[900px] right-[-100px] transform translate-x-[-50%] translate-y-[-50%] bg-fuchsia-800 max-w-[600px] w-full p-2 border-2 border-[#db0f31]">
     <div className="relative border-2 border-[#db0f31] p-10 flex items-center justify-between">
     
     

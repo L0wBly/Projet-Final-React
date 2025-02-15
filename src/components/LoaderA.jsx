@@ -31,7 +31,7 @@ const LoaderA = ({ timer, onComplete }) => {  // Ajout du callback onComplete
                     <source src={player} />
                 </video>
                 <div className='absolute w-[100%] h-[100%] top-0 flex flex-col justify-center items-center text-amber-50'>
-                    <h2 className='text-[70px]'> CHARGEMENT APR7S </h2>
+                    <h2 className='text-[70px]'> CHARGEMENT APRÈS </h2>
                     <span className='text-[200px] animate-[rainbow_5s_infinite]'>L'EXPLOSION</span>
                     <img className='s' src='../assets/images/bomba.gif' />
                 </div>

@@ -1,5 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import Loader from "./Loader";
+import Hours from "./Hours";
 
 export default function Markdown() {
   const navigate = useNavigate();
@@ -16,6 +17,9 @@ export default function Markdown() {
         <p>Aller vers l&apos;accueil</p>
         <button type="submit">Go</button>
       </form>
+      <div id='heure' className='flex flex-col items-end fixed bottom-[0] w-full'>
+          <Hours timerhours={1000} />
+      </div>
     </main>
   )
 };

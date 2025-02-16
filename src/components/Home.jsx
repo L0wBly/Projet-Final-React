@@ -181,7 +181,6 @@ export default function Home() {
       <div className="flex justify-center items-center w-[150px] h-[190px] bg-[#d8b801]">
       <img className="w-full h-full object-cover" src="../assets/images/trumpet.png" alt="Trumpet" />
       </div>
-
     </div>
 
   

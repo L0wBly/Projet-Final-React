@@ -1,7 +1,10 @@
+
 import React, { useState, useEffect } from 'react';
 import '../style.css';
-function Hours() {
+import PropTypes from 'prop-types';
+function Hours({timerhours}) {
     const [time, setTime] = useState(new Date());
+    const [hours, setHours] = useState(false);
   
     useEffect(() => {
       const timer = setInterval(() => {
@@ -20,6 +23,15 @@ function Hours() {
 
       let date1 = new Date().toLocaleDateString();
 
+      useEffect(() => {
+        const timer1 = setTimeout(() => {
+          setHours(true);
+        }, timerhours);
+        
+        return () => {
+          clearTimeout(timer1);
+        };
+      }, []);
   
     return (
         <div className='heure'>
@@ -30,5 +42,10 @@ function Hours() {
         </div>
     );
   }
+
+Hours.propTypes = {
+    timer: PropTypes.string.isRequired,
+  };
   
-  export default Hours;
+export default Hours;
+

@@ -1,4 +1,3 @@
-import { useNavigate } from "react-router-dom";
 import LoaderA from './LoaderA'; 
 import { useState } from 'react'; 
 import Citation from "./Citation";
@@ -7,21 +6,12 @@ import Cocktail from "./Cocktail";
 import Evenement from "./Evenement";
 import Hours from "./Hours";
 import Dialog from "./Dialog";
-import ClickSpark from '../utils/Animations/ClickSpark/ClickSpark';
 import '../style.css';
+import ClickSpark from '../utils/Animations/ClickSpark/ClickSpark';
+import { Link } from "react-router-dom";
 
 export default function Home() {
-  const navigate = useNavigate();
-  const [isLoaderCompleted, setIsLoaderCompleted] = useState(false);
   const [rotateDeg, setRotateDeg] = useState("-200deg");
-  function goto() {
-    navigate('/markdown');
-  }
-
-  const handleLoaderComplete = () => {
-    setIsLoaderCompleted(true); 
-  };
-
   const handleClick = () => {
     setRotateDeg((prevRotateDeg) => prevRotateDeg === "-200deg" ? "-2deg" : "-200deg");
   };
@@ -46,22 +36,24 @@ export default function Home() {
 
 
   return (
-    <main className="relative w-full h-screen">
-  {!isLoaderCompleted && <LoaderA timer={4000} onComplete={handleLoaderComplete} />}
-  {isLoaderCompleted && <div></div>}
+    <>
+      <LoaderA timer={4000} />
 
   <div className="flex flex-col items-center">
-    <div className="relative w-full h-screen">
+    <div className="w-full">
 
 
       {/* Accueil : LOGO + ?? */}
 
       <div className="w-[1200px] h-[600px] bg-cyan-500 rounded-lg absolute top-0 right-0 flex justify-center items-center">
         <div className="w-[1190px] h-[590px] bg-amber-200 flex justify-center items-center relative">
+        <ClickSpark />
           <img className="top-[20px] absolute" src="../assets/images/ani_line_star2_rainbow.gif" alt="banderol" />
           <img className="absolute top-[50px] w-[585px]" src="../assets/images/LOGO.png" />
           <p className="">
             Bienvenue au Markdawn Palace !
+            <br />
+            Cliquez pour une petite animation !
            <Hours />
           </p>
         </div>
@@ -70,19 +62,21 @@ export default function Home() {
 
       {/* Fichiers Markdown */}
 
-      <div className="w-[600px] h-[600px] bg-[rgba(0,0,0,0.7)] absolute top-[-20px] left-[20px] z-[1000] flex justify-center items-center rounded-[50px] mt-[65px]">
+      <div className="w-[600px] h-[600px] bg-[rgba(0,0,0,0.7)] absolute top-[-20px] left-[20px] z-3 flex justify-center items-center rounded-[50px] mt-[65px]">
       <div className="w-[500px] h-[500px] bg-[#d8b801] flex justify-center items-center relative">
         <img className="w-[100px] h-[100px] absolute z-[2] top-[-60px] left-[-45px]" src="../assets/images/book2.gif" />
         <img className="w-[100px] h-[100px] absolute z-[2] top-[-60px] right-[-45px]" src="../assets/images/book2.gif" />
         <img className="w-[100px] h-[100px] absolute z-[2] bottom-[-30px] left-[-45px]" src="../assets/images/book2.gif" />
         <img className="w-[100px] h-[100px] absolute z-[2] bottom-[-30px] right-[-45px]" src="../assets/images/book2.gif" />
-        <div className="w-[480px] h-[480px] bg-emerald-800 relative z-[1]"> <p className="text-center text-[50px]"> MARKDAWN FILES</p>    </div>
+        <div className="w-[480px] h-[480px] bg-emerald-800 relative z-[1] flex flex-col gap-[160px]"> 
+          <p className="text-center text-[50px]"> MARKDAWN FILES</p>
+          <Link className='flex justify-center text-[30px] border-2 border-solid border-white rounded-full p-1 m-2' to="/Markdown">Aller à la page du Markdown</Link>
+        </div>
       </div>
       </div>
 
       {/* BLAGUE */}
 
-      <div className="relative">
       <div className="w-[800px] h-[550px] bg-black border-t-[10px] border-r-[170px] border-b-[10px] border-l-[20px] border-gray-900 flex justify-center items-center absolute right-[1400px] top-[725px] left-[5px] animate-[rainbow-border_5s_infinite] rounded-xl">
       <p className="absolute right-[-350px] top-[42%] transform rotate-[270deg] text-zinc-950 text-[60px]"> CLICK RIGHT THERE </p>
         <div className="w-[800px] h-[950px] border-4 border-solid border-transparent flex justify-center items-center rounded-[95%_4%_92%_5%_/_4%_95%_6%_95%] transform rotate-[2deg]">
@@ -95,7 +89,6 @@ export default function Home() {
           </div>
         </div>
       </div>
-    </div>
 
 
       {/* Easter Egg ? Clic */}
@@ -137,12 +130,16 @@ export default function Home() {
 <div className="absolute left-[30px] top-[1350px] bg-[#d8b801] w-[900px] h-[700px] flex justify-center items-center">
   <div className="relative w-[100%] h-[100%] flex justify-center items-center">
     {!showGif && !showMocktail && (
-      <img
-        className="" 
-        src="../assets/images/mocktail.jpg"
-        alt="Mocktail Vide"
-        onClick={MocktailClick}
-      />
+      <div className="flex-column justify-items-center items-center">
+        <h3 className="text-[24px] font-bold">Cliquer pour révéler</h3>
+        <br />
+        <img
+          className="" 
+          src="../assets/images/mocktail.jpg"
+          alt="Mocktail Vide"
+          onClick={MocktailClick}
+        />
+      </div>
     )}
     {showGif && (
       <div className="absolute">
@@ -210,14 +207,14 @@ export default function Home() {
 
     {/* RECETTE */}
 
-    <div className="absolute top-[2300px]">
+    <div className="absolute left-2/3 bottom-[-1100px]">
       <Dialog />
     </div>
 
 
     </div>
   </div>
-</main>
+</>
 
   );
 }

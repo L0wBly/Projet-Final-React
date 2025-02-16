@@ -1,0 +1,322 @@
+        /*conteneur principal */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            font-family: Arial, sans-serif;
+        }
+
+        .editor-container {
+            display: flex;
+            gap: 20px;
+            height: 500px;
+        }
+
+        /* Styles pour les conteneurs d'entrée et d'aperçu */
+        .input-container, .preview-container {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* En-têtes des sections */
+        .input-header, .preview-header {
+            background-color: #f3f4f6;
+            padding: 10px;
+            border-radius: 4px 4px 0 0;
+            font-weight: bold;
+        }
+
+        /* Zone de saisie du texte Markdown */
+        #markdown-input {
+            background-color: #f3f4f6;
+            flex: 1;
+            padding: 15px;
+            border: 1px solid #ccc;
+            border-radius: 0 0 4px 4px;
+            resize: none;
+            font-family: monospace;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+
+        /* Zone rendu Markdown */
+        #preview {
+            flex: 1;
+            padding: 15px;
+            border: 1px solid #ccc;
+            border-radius: 0 0 4px 4px;
+            overflow-y: auto;
+            background-color: white;
+        }
+
+        /*Barre d'outils*/
+        .toolbar {
+            margin-bottom: 20px;
+            padding: 10px;
+            background-color: #f3f4f6;
+            border-radius: 4px;
+        }
+
+        /*Style des boutons*/
+        button {
+            padding: 8px 12px;
+            margin-right: 8px;
+            background-color: #4f46e5;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        /* je sais pas si on garde ou change de couleur  */
+        button:hover {
+            background-color: #4338ca;
+        }
+
+        /* titre éditable */
+        .title-container {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            gap: 10px;
+        }
+
+        /* Style du titre */
+        #document-title {
+            font-size: 24px;
+            padding: 5px 10px;
+            border: 1px solid transparent;
+            border-radius: 4px;
+            flex-grow: 1;
+        }
+
+        /* A voir si on garde */
+        #document-title:hover {
+            border-color: #ccc;
+        }
+
+        /* quand on click sur le titre */
+        #document-title:focus {
+            border-color: #4f46e5;
+            outline: none;
+        }
+
+        /* Barre d'outils */
+        .file-toolbar {
+            margin-bottom: 10px;
+            padding: 10px;
+            background-color: #f3f4f6;
+            border-radius: 4px;
+            display: flex;
+            gap: 10px;
+        }
+
+        .file-input {
+            display: none;
+        }
+        
+        /* Styles pour le rendu Markdown dans l'aperçu */
+        #preview h1, #preview h2, #preview h3, 
+        #preview h4, #preview h5, #preview h6 {
+            margin-top: 1em;
+            margin-bottom: 0.5em;
+        }
+
+        #preview p {
+            margin-bottom: 1em;
+            line-height: 1.6;
+        }
+
+        #preview code {
+            background-color: #f3f4f6;
+            padding: 2px 4px;
+            border-radius: 4px;
+        }
+
+        #preview pre {
+            background-color: #f3f4f6;
+            padding: 1em;
+            border-radius: 4px;
+            overflow-x: auto;
+        }
+
+        #preview blockquote {
+            border-left: 4px solid #e5e7eb;
+            padding-left: 1em;
+            margin-left: 0;
+            color: #6b7280;
+        }
+
+  /* Titres (h1 à h6) */
+  .markdown-container h1,
+  .markdown-container h2,
+  .markdown-container h3,
+  .markdown-container h4,
+  .markdown-container h5,
+  .markdown-container h6 {
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .markdown-container h1 {
+    font-size: 2.5em;
+    border-bottom: 2px solid #4f46e5;
+    padding-bottom: 5px;
+  }
+  
+  .markdown-container h2 {
+    font-size: 2em;
+    color: #4f46e5;
+  }
+  
+  .markdown-container h3 {
+    font-size: 1.5em;
+    color: #6b7280;
+  }
+  
+  .markdown-container h4,
+  .markdown-container h5,
+  .markdown-container h6 {
+    font-size: 1.2em;
+    color: #6b7280;
+  }
+  
+  /* Paragraphes */
+  .markdown-container p {
+    margin-bottom: 15px;
+    color: #555;
+    font-size: 1em;
+    line-height: 1.6;
+  }
+  
+  /* Liens */
+  .markdown-container a {
+    color: #4f46e5;
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+  
+  .markdown-container a:hover {
+    color: #4338ca;
+    text-decoration: underline;
+  }
+  
+  /* Gras */
+  .markdown-container strong,
+  .markdown-container b {
+    font-weight: bold;
+    color: #111;
+  }
+  
+  /* Italique */
+  .markdown-container em,
+  .markdown-container i {
+    font-style: italic;
+    color: #333;
+  }
+  
+  /* Listes non ordonnées */
+  .markdown-container ul {
+    list-style-type: disc;
+    margin-left: 20px;
+  }
+  
+  .markdown-container ul li {
+    margin-bottom: 10px;
+  }
+  
+  /* Listes ordonnées */
+  .markdown-container ol {
+    list-style-type: decimal;
+    margin-left: 20px;
+  }
+  
+  .markdown-container ol li {
+    margin-bottom: 10px;
+  }
+  
+  /* Blocs de citation */
+  .markdown-container blockquote {
+    background-color: #f3f4f6;
+    border-left: 4px solid #4f46e5;
+    padding: 10px 15px;
+    margin: 20px 0;
+    font-style: italic;
+    color: #6b7280;
+  }
+  
+  /* Code inline */
+  .markdown-container code {
+    background-color: #f1f1f1;
+    padding: 2px 4px;
+    border-radius: 4px;
+    font-size: 0.9em;
+    color: #111;
+  }
+  
+  /* Blocs de code */
+  .markdown-container pre {
+    background-color: #2d2d2d;
+    color: #f3f4f6;
+    padding: 15px;
+    border-radius: 5px;
+    overflow-x: auto;
+    font-family: 'Courier New', monospace;
+    font-size: 1em;
+  }
+  
+  /* Images */
+  .markdown-container img {
+    max-width: 100%;
+    border-radius: 5px;
+    margin: 20px 0;
+  }
+  
+  /* Tableaux */
+  .markdown-container table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+  }
+  
+  .markdown-container table th,
+  .markdown-container table td {
+    padding: 10px;
+    border: 1px solid #ddd;
+  }
+  
+  .markdown-container table th {
+    background-color: #4f46e5;
+    color: white;
+  }
+  
+  .markdown-container table tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+  
+  .markdown-container table tr:hover {
+    background-color: #f1f1f1;
+  }
+  
+  /* Listes de définitions */
+  .markdown-container dl {
+    margin: 0;
+  }
+  
+  .markdown-container dt {
+    font-weight: bold;
+    margin-top: 10px;
+  }
+  
+  .markdown-container dd {
+    margin-left: 20px;
+    margin-bottom: 10px;
+  }
+  
+  /* Saut de ligne */
+  .markdown-container br {
+    margin-bottom: 10px;
+  }
+  

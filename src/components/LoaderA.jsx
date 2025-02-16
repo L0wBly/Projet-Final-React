@@ -2,7 +2,6 @@ import { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import player from '/assets/videos/player.mp4';
 import '../style.css';
-import Home from '../components/Home';
 
 const LoaderA = ({ timer, onComplete }) => {  // Ajout du callback onComplete
     const [loadingA, setLoadingA] = useState(true);
@@ -10,18 +9,17 @@ const LoaderA = ({ timer, onComplete }) => {  // Ajout du callback onComplete
     useEffect(() => {
         const timeoutDuration = timer || 6000;
         const timerId = setTimeout(() => {
-            setLoadingA(false);
-            if (onComplete) {
-                onComplete();  // Appeler le callback lorsque le chargement est terminé
-            }
-        }, timeoutDuration);
+            setLoadingA(true);
+            setTimeout(() => {
+                setLoadingA(false)
+            }, timeoutDuration);
+        }, []);
 
         return () => clearTimeout(timerId); // Nettoyer le timeout
     }, [timer, onComplete]); // Ajout de onComplete comme dépendance
 
-    if (loadingA) {
         return (
-            <div className='relative w-full h-screen'>
+            <div className={`w-full h-screen fixed z-50 ${!loadingA && "-translate-y-[100%] duration-800"}`}>
                 <div className='absolute top-0 left-0 w-full h-full bg-black opacity-60'></div>
                 <video 
                     autoPlay
@@ -38,9 +36,6 @@ const LoaderA = ({ timer, onComplete }) => {  // Ajout du callback onComplete
             </div>
         );
     }
-
-    return <Home />; // Retourner la page d'accueil une fois le chargement terminé
-};
 
 LoaderA.propTypes = {
     timer: PropTypes.number.isRequired,

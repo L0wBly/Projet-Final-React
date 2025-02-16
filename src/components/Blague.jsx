@@ -52,7 +52,7 @@ export default function Blague() {
                     </p>
                 }
                 {!hide &&
-                <button onClick={() => (reveal())}>
+                <button className='border-2 border-solid border-white rounded-full p-1' onClick={() => (reveal())}>
                     Réveler la chute
                 </button>
                 }

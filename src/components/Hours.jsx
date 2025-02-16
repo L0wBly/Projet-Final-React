@@ -1,4 +1,6 @@
-import { useState, useEffect } from 'react';
+
+import React, { useState, useEffect } from 'react';
+import '../style.css';
 import PropTypes from 'prop-types';
 function Hours({timerhours}) {
     const [time, setTime] = useState(new Date());
@@ -32,15 +34,12 @@ function Hours({timerhours}) {
       }, []);
   
     return (
-      <div>
-        {hours && 
-          <div className='pr-1 flex flex-col items-center'>
-            <p id='p1'>{date1}</p>
-            <p>{formattedTime}</p>
-          </div>
-        }
-      </div>    
-      
+        <div className='heure'>
+          <p className=''>Il est actuellement : </p>
+          <br />
+          <p className='size-[30px] animate-[rainbow_5s_infinite]'>{date1} {formattedTime}</p>
+          
+        </div>
     );
   }
 

@@ -35,10 +35,10 @@ export default function Citation() {
         {error && <p>{error.message}</p>}
         {citation && (
             <div>
-                <h2>
-                    Citation du jour
+                <h2 className='mb-4 text-gray-400'>
+                    Et voilà , la citation du jour :
                 </h2>
-                <p>
+                <p className='font-[fontCitation] text-lime-500'>
                     {citation.slip.advice}
                 </p>
             </div>

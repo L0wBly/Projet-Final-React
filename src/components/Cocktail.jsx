@@ -38,8 +38,9 @@ export default function Cocktail() {
         {cocktail && (
             <div>
                 <h2>
-                    Mocktail du jour
+                    MOCKTAIL DU JOUR
                 </h2>
+                <br />
                 <p>
                     {cocktail.drinks[parseInt(aleatoire)].strDrink}
                 </p>

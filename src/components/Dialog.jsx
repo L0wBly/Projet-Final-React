@@ -44,7 +44,7 @@ function Dialog() {
             <button onClick={gererAffichage} className="border-2 border-solid pr-4 pl-4 pt-1 pb-1 rounded-[20px] hover:bg-blue-500" >Afficher dialog</button>
             
             <dialog id="dialog" open={dialogOuverte} className="bg-transparent relative top-[-50%] translate-y-[-20%] left-[-50%] translate-x-[-50%] z-10 rounded-[20px]">
-              <header className="flex flex-col items-center justify-center p-5 bg-rose-700">
+              <header className="flex flex-col items-center justify-center p-5 paper">
                 <h2 className="text-[2rem]">Recette du jour</h2>
                 <p className="pr-3 pl-3 pt-3 pb-3 text-[1.4rem]">{recette.meals[0].strMeal}</p>
                 <p className="pr-5 pl-5">{recette.meals[0].strInstructions}</p>
